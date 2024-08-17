@@ -6,12 +6,30 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="background">
-            <h1 id="title">Text to Speech</h1>
-            <textarea id="input-text" placeholder="Write anything here..." spellcheck="false"></textarea>
+        <div class="background" id="panel_0">
+            <div class="title">
+                <h1 id="title_TTS">Text to Speech</h1>
+                <button id="switch_0" class="button">Switch</button>
+            </div>
+            <div>
+                <textarea id="input-text" class="textarea" placeholder="Write anything here..." spellcheck="false"></textarea>
+            </div>
             <div class="options">
                 <select id="select"></select>
                 <button id="listen" class="button">Listen</button>
+            </div>
+        </div>
+        <div class="background" id="panel_1">
+            <div class="title">
+                <h1 id="title_STT">Speech to Text</h1>
+                <button id="switch_1" class="button">Switch</button>
+            </div>
+            <div>
+                <textarea id="output-text" class="textarea" placeholder="Text will show here" spellcheck="false" readonly></textarea>
+            </div>
+            <div class="options">
+                <button id="start" class="button">Start</button>
+                <button id="stop" class="button">Stop</button>
             </div>
         </div>
         <script src="script.js"></script>
