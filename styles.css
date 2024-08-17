@@ -3,60 +3,39 @@
     padding: 0;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
-.background #title{
-    font-size: 45px;
-    font-weight: 500;
-    margin: -50px auto 50px auto;
+
+:root {
+    --color1: #122c34;
+    --color2: #224870;
+    --color3: #2a4494;
+    --color4: #4ea5d9;
+    --color5: #44CFCB;
+    --color6: #ffffff;
+    --color7: #000000;
 }
-.textarea{
-    width: 600px;
-    height: 250px;
-    background: #252525;
-    color: #fff;
-    font-size: 15px;
-    border: 0;
-    outline: 0;
-    padding: 20px;
-    border-radius: 10px;
-    resize: none;
-    margin: 0 0 30px 0;
-}
-.textarea::placeholder{
-    font-size: 16px;
-    color: #ddd;
-}
-.options{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
+
+/*button css*/
 .button{
-    background: #252525;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 30px;
+    font-size: 12px;
+    padding: 5px 25px;
     border-radius: 35px;
     border: 0;
     outline: 0;
+    margin: 10px;
     cursor: pointer;
 }
-#select{
-    width: 400px;
-    flex: 1;
-    color: #fff;
-    background: #252525;
-    height: 50px;
-    padding: 0 20px;
-    outline: 0;
-    border: 0;
-    border-radius: 35px;
-    appearance: none;
+.button:hover{
+    transform:translateY(-0.25vh);
 }
-.title {
-    display: flex;
-    margin: 20px;
-    gap: 20px;
+.button0{
+    background: var(--color5);
+    color: var(--color1);
 }
+.button1{
+    background: var(--color1);
+    color: var(--color5);
+}
+/*background*/
 .background {
     width: 100%;
     height: 100vh;
@@ -66,9 +45,247 @@
 }
 #panel_0{
     display: flex;
-    background: linear-gradient(45deg,#397c97,#808d08);
+    background: linear-gradient(45deg,var(--color1),var(--color5));
 }
 #panel_1{
     display: none;
-    background: linear-gradient(45deg,#808d08,#397c97);
+    background: linear-gradient(45deg,var(--color5),var(--color1));
+}
+/*section container*/
+.container{
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 0;
+}
+/*textarea*/
+.textarea{
+    width: 200px;
+    height: 200px;
+    font-size: 10px;
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    border-radius: 10px;
+    resize: none;
+    display: block;
+    margin: 0 auto;
+}
+.textarea0{
+    background: var(--color5);
+    color: var(--color1);
+}
+.textarea1{
+    background: var(--color1);
+    color: var(--color5);
+}
+.textarea0::placeholder{
+    font-size: 10px;
+    color: var(--color1);
+}
+.textarea1::placeholder{
+    font-size: 10px;
+    color: var(--color5);
+}
+/*title*/
+#title_TTS,#title_STT{
+    font-size: 20px;
+    font-weight: 500;
+    margin: auto;
+}
+.title {
+    display: flex;
+    margin: 20px auto;
+}
+/*select and bottom row*/
+.options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#select{
+    width: 200px;
+    font-size: 12px;
+    background: var(--color5);
+    color: var(--color1);
+    padding: 5px 30px;
+    outline: 0;
+    border: 0;
+    border-radius: 35px;
+    appearance: none;
+}
+
+@media (min-width: 375px) {
+    .container {
+        min-width: 375px;
+    }
+    .textarea{
+        width: 300px;
+        height: 200px;
+    }
+    #title_TTS,#title_STT{
+        font-size: 25px;
+    }
+    .textarea{
+        padding: 10px;
+        font-size: 15px;
+    }
+    .textarea0::placeholder, .textarea1::placeholder{
+        font-size: 10px;
+    }
+    .button {
+        font-size: 12px;
+        padding: 5px 25px;
+        margin: 10px;
+    }
+    #select{
+        padding: 5px 30px;
+        font-size: 12px;
+        width: 200px;
+    }
+}
+@media (min-width: 425px) {
+    .container {
+        min-width: 425px;
+    }
+    .textarea{
+        width: 300px;
+        height: 200px;
+    }
+    #title_TTS,#title_STT{
+        font-size: 25px;
+    }
+    .textarea{
+        padding: 12.5px;
+        font-size: 15px;
+    }
+    .textarea0::placeholder, .textarea1::placeholder{
+        font-size: 12.5px;
+    }
+    .button {
+        font-size: 12.5px;
+        padding: 5px 30px;
+        margin: 10px;
+    }
+    #select{
+        padding: 5px 30px;
+        font-size: 12.5px;
+        width: 300px;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        min-width: 768px;
+    }
+    .textarea{
+        width: 500px;
+        height: 200px;
+    }
+    #title_TTS,#title_STT{
+        font-size: 25px;
+    }
+    .textarea{
+        padding: 12.5px;
+        font-size: 15px;
+    }
+    .textarea0::placeholder, .textarea1::placeholder{
+        font-size: 12.5px;
+    }
+    .button {
+        font-size: 12.5px;
+        padding: 5px 30px;
+        margin: 10px;
+    }
+    #select{
+        padding: 5px 30px;
+        font-size: 12.5px;
+        width: 300px;
+    }
+}
+@media (min-width: 1024px) {
+    .container {
+        min-width: 1024px;
+    }
+    .textarea{
+        width: 600px;
+        height: 300px;
+    }
+    #title_TTS,#title_STT{
+        font-size: 40px;
+    }
+    .textarea{
+        padding: 16px;
+        font-size: 16px;
+    }
+    .textarea0::placeholder, .textarea1::placeholder{
+        font-size: 16px;
+    }
+    .button {
+        font-size: 16px;
+        padding: 10px 30px;
+        margin: 12.5px;
+    }
+    #select{
+        padding: 10px 30px;
+        font-size: 16px;
+        width: 600px;
+    }
+}
+@media (min-width: 1440px) {
+    .container {
+        min-width: 1400px;
+    }
+    .textarea{
+        width: 800px;
+        height: 400px;
+    }
+    #title_TTS,#title_STT{
+        font-size: 50px;
+    }
+    .textarea{
+        padding: 20px;
+        font-size: 20px;
+    }
+    .textarea0::placeholder, .textarea1::placeholder{
+        font-size: 20px;
+    }
+    .button {
+        font-size: 20px;
+        padding: 10px 30px;
+        margin: 25px;
+    }
+    #select{
+        padding: 10px 30px;
+        font-size: 20px;
+        width: 600px;
+    }
+}
+@media (min-width: 2560px) {
+    .container {
+        min-width: 2560px;
+    }
+    .textarea{
+        width: 1600px;
+        height:800px;
+    }
+    #title_TTS,#title_STT{
+        font-size: 100px;
+    }
+    .textarea{
+        padding: 40px;
+        font-size: 40px;
+    }
+    .textarea0::placeholder, .textarea1::placeholder{
+        font-size: 40px;
+    }
+    .button {
+        font-size: 40px;
+        padding: 20x 60px;
+        margin: 50px;
+    }
+    #select{
+        padding: 20px 60px;
+        font-size: 40px;
+        width: 1200px;
+    }
 }

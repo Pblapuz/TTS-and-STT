@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Text-To-Speech and Recorder Website - Demo Project</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <div class="background" id="panel_0">
-            <div class="title">
-                <h1 id="title_TTS">Text to Speech</h1>
-                <button id="switch_0" class="button">Switch</button>
-            </div>
-            <div>
-                <textarea id="input-text" class="textarea" placeholder="Write anything here..." spellcheck="false"></textarea>
-            </div>
-            <div class="options">
-                <select id="select"></select>
-                <button id="listen" class="button">Listen</button>
-            </div>
+            <section class="container">
+                <div class="title">
+                    <h1 id="title_TTS">Text to Speech Converter</h1>
+                </div>
+            </section>
+            <section class="container">
+                <div>
+                    <textarea id="input-text" class="textarea textarea0" placeholder="Write anything here..." spellcheck="false"></textarea>
+                </div>
+            </section>
+            <section class="container">
+                <div class="options">
+                    <button id="listen" class="button button0">Listen</button>
+                    <button id="switch_0" class="button button0">Switch</button>
+                </div>
+                <div class="options">
+                    <select id="select"></select>
+                </div>
+            </section>
         </div>
         <div class="background" id="panel_1">
+            <section class="container">
+
             <div class="title">
-                <h1 id="title_STT">Speech to Text</h1>
-                <button id="switch_1" class="button">Switch</button>
+                <h1 id="title_STT">Speech to Text Converter</h1>
             </div>
+        </section>
+            <section class="container">
             <div>
-                <textarea id="output-text" class="textarea" placeholder="Text will show here" spellcheck="false" readonly></textarea>
+                <textarea id="output-text" class="textarea textarea1" placeholder="Text will show here" spellcheck="false" readonly></textarea>
             </div>
+        </section>
+            <section class="container">
             <div class="options">
-                <button id="start" class="button">Start</button>
-                <button id="stop" class="button">Stop</button>
+                <button id="start" class="button button1">Start</button>
+                <button id="stop" class="button button1">Stop</button>
+                <button id="switch_1" class="button button1">Switch</button>
             </div>
-        </div>
+            </div>
+        </section>
         <script src="script.js"></script>
     </body>
 </html>
