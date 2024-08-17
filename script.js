@@ -1,9 +1,10 @@
-const synth = window.speechSynthesis;
 let speech = new SpeechSynthesisUtterance();
-
 let voices = [];
-const voiceSelect = document.querySelector("#select");
-const listenButton = document.querySelector("#listen");
+const synth = window.speechSynthesis;
+const voiceSelect = document.getElementById("select");
+const listenButton = document.getElementById("listen");
+const inputText = document.getElementById("input-text");
+const downloadButton = document.getElementById("download");
 
 function voiceList() {
     voices = synth.getVoices();
@@ -16,10 +17,10 @@ function changeVoice() {
     speech.voice = voices[voiceSelect.value];
 }
 function listen(){
-    speech.text = document.querySelector("#input-text").value;
-    window.speechSynthesis.speak(speech);
+    speech.text = inputText.value;
+    synth.speak(speech);
 }
 
 synth.addEventListener("voiceschanged", voiceList);
 voiceSelect.addEventListener("change", changeVoice);
-listenButton.addEventListener("click", listen)
+listenButton.addEventListener("click", listen);
