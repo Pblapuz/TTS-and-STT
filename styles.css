@@ -39,7 +39,7 @@
     align-items: center;
     gap: 20px;
 }
-#listen{
+.button{
     background: #252525;
     color: #fff;
     font-size: 16px;
@@ -50,6 +50,7 @@
     cursor: pointer;
 }
 #select{
+    width: 400px;
     flex: 1;
     color: #fff;
     background: #252525;

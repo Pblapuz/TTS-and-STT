@@ -1,20 +1,25 @@
+const synth = window.speechSynthesis;
 let speech = new SpeechSynthesisUtterance();
 
 let voices = [];
-let voiceSelect = document.querySelector("#select");
+const voiceSelect = document.querySelector("#select");
+const listenButton = document.querySelector("#listen");
 
-window.speechSynthesis.onvoiceschanged = () => {
-    voices = window.speechSynthesis.getVoices();
-    speech.voice = voices[0];
-
-    voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
+function voiceList() {
+    voices = synth.getVoices();
+    voices.forEach(makeVoiceList)
 };
-
-voiceSelect.addEventListener("change", () => {
+function makeVoiceList(voice, i){
+    voiceSelect.options[i] = new Option(voice.name, i)
+}
+function changeVoice() {
     speech.voice = voices[voiceSelect.value];
-});
-
-const listenButton = document.querySelector("#listen").addEventListener("click", () => {
+}
+function listen(){
     speech.text = document.querySelector("#input-text").value;
     window.speechSynthesis.speak(speech);
-} )
+}
+
+synth.addEventListener("voiceschanged", voiceList);
+voiceSelect.addEventListener("change", changeVoice);
+listenButton.addEventListener("click", listen)
